@@ -38,3 +38,4 @@ class NetworkMahasiswaRepository(
         }
     }
 
+    override suspend fun getMahasiswa(): List<Mahasiswa> = mahasiswaApiService.getMahasiswa()
