@@ -26,5 +26,5 @@ class HomeViewModel(private val mhs: MahasiswaRepository) : ViewModel() {
     }
 
     fun getMhs() {
-       
+        viewModelScope.launch {
 
