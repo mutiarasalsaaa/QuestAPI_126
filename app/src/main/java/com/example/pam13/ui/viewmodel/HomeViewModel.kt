@@ -17,3 +17,25 @@ sealed class HomeUiState {
     object Loading : HomeUiState()
 }
 
+class HomeViewModel(private val mhs: MahasiswaRepository) : ViewModel() {
+    var mhsUiState: HomeUiState by mutableStateOf(HomeUiState.Loading)
+        private set
+
+    init {
+        getMhs()
+    }
+
+
+
+    fun deleteMhs(nim: String) {
+        viewModelScope.launch {
+            try {
+                mhs.deleteMahasiswa(nim)
+            } catch (e: IOException) {
+                HomeUiState.Error
+            } catch (e: HttpException) {
+                HomeUiState.Error
+            }
+        }
+    }
+}
