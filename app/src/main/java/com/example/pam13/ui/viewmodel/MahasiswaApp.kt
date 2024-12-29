@@ -19,5 +19,12 @@ fun MahasiswaApp() {
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         // topBar = { TopAppBar(scrollBehavior = scrollBehavior) }
-    ) 
+    ) {
+        Surface(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(it)
+        )
+}
+
 
