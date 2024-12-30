@@ -41,3 +41,25 @@ data class InsertUiEvent(
     val angkatan: String = ""
 )
 
+fun InsertUiEvent.toMhs(): Mahasiswa = Mahasiswa(
+    nim = nim,
+    nama = nama,
+    alamat = alamat,
+    jeniskelamin = jenisKelamin,
+    kelas = kelas,
+    angkatan = angkatan
+)
+
+fun Mahasiswa.toUiStateMhs(): InsertUiState = InsertUiState(
+    insertUiEvent = this.toInsertUiEvent()
+)
+
+fun Mahasiswa.toInsertUiEvent(): InsertUiEvent = InsertUiEvent(
+    nim = nim,
+    nama = nama,
+    alamat = alamat,
+    jenisKelamin = jeniskelamin,
+    kelas = kelas,
+    angkatan = angkatan
+)
+

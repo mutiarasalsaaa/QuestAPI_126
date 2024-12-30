@@ -1,5 +1,7 @@
-package com.example.pam13.Repository
+package com.example.pam13.dependeciesinjection
 
+import com.example.pam13.Repository.MahasiswaRepository
+import com.example.pam13.Repository.NetworkMahasiswaRepository
 import com.example.pam13.Service.MahasiswaService
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
